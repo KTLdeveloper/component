@@ -1,5 +1,21 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+import HelloWorld from './components/HelloWorld.vue';
+const count1 = ref(0)
+const handleIncreaseCount1 = () => {
+  count1.value +=
+  1
+} 
+const count2 = ref(0)
+const handleIncreaseCount2 = () => {
+  count2.value +=
+  2
+}
+const count3 = ref(0)
+const handleIncreaseCount3 = () => {
+  count3.value +=
+  3
+} 
 </script>
 
 <template>
@@ -11,6 +27,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <div class="count" @click="handleIncreaseCount1">{{ count1 }}</div>
+  <div class="count" @click="handleIncreaseCount2">{{ count2 }}</div>
+  <div class="count" @click="handleIncreaseCount3">{{ count3 }}</div>
   <HelloWorld msg="Vite + Vue" />
 </template>
 
@@ -26,5 +45,9 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+
+.count {
+
 }
 </style>
