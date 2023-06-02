@@ -1,5 +1,9 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Count from './components/Count.vue';
+import HelloWorld from './components/HelloWorld.vue';
+const count1 = ref(0)
+const count2 = ref(0)
+const count3 = ref(0)
 </script>
 
 <template>
@@ -11,6 +15,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
+  <Count v-model="count1" :increaseNum="1" />
+  <Count v-model="count2" :increaseNum="2" />
+  <Count  v-model="count3" :increaseNum="3"/>
   <HelloWorld msg="Vite + Vue" />
 </template>
 
